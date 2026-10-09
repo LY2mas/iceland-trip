@@ -29,6 +29,7 @@ nav a { text-decoration:none; color:var(--ink); background:var(--yellow); border
 .must { background:var(--coral); border:2px solid var(--ink); border-radius:8px; padding:1px 8px; font-size:0.8rem; margin-left:6px; }
 .toll { background:#FF6B6B; border:2px solid var(--ink); border-radius:8px; padding:1px 8px; font-size:0.8rem; margin-left:6px; font-weight:bold; }
 .note { background:var(--yellow); border:2px solid var(--ink); border-radius:8px; padding:1px 8px; font-size:0.8rem; margin-left:6px; }
+.cap { font-size:0.85rem; margin-top:4px; }
 .spot-img,.hero-img,.stay-img { width:100%; max-width:520px; border-radius:16px; border:3px solid var(--ink); margin:8px 0; display:block; }
 .checklist li { list-style:none; margin:10px 0; display:flex; align-items:center; gap:10px; }
 </style>
@@ -59,8 +60,8 @@ const days = [
     {time:'12:20–13:20', act:'Lunch KEF', tag:'eat'},
     {time:'14:00–16:00', act:'藍湖', tag:'act', must:true, img:'images/blue-lagoon.jpg'},
     {time:'17:00', act:'入住 Máni Apartments', tag:'act'},
-    {time:'17:50–18:20', act:'Hallgrímskirkja（可選）', tag:'walk', must:true, note:'時間不夠可改 11/19', img:'images/hallgrimskirkja.jpg'},
-    {time:'18:25–18:40', act:'Harpa', tag:'walk', img:'images/harpa.jpg'},
+    {time:'17:50–18:20', act:'Hallgrímskirkja（可選）', tag:'walk', must:true, note:'時間不夠可改 11/19', img:'images/hallgrimskirkja.jpg?v=2'},
+    {time:'18:25–18:40', act:'Harpa', tag:'walk', img:'images/harpa.jpg?v=2'},
     {time:'18:45–18:55', act:'太陽航海者', tag:'walk'},
     {time:'18:30', act:'晚餐 Messinn', tag:'eat'},
     {time:'20:30–21:30', act:'極光備案 Grótta（可選）', tag:'drive'}
@@ -134,7 +135,7 @@ const days = [
   {date:'11/19', color:'#D4E8C8', title:'雷市賞鯨', stay:{name:'Stay Apartments Einholt（雷市）', note:'可煮·未有公寓實圖'}, items:[
     {time:'12:30', act:'入住 Stay Apartments', tag:'act'},
     {time:'13:00–16:00', act:'舊港賞鯨', tag:'act', must:true},
-    {time:'16:30–17:30', act:'Hallgrímskirkja（可補）', tag:'walk', note:'11/9 未去可補', img:'images/hallgrimskirkja.jpg'},
+    {time:'16:30–17:30', act:'Hallgrímskirkja（可補）', tag:'walk', note:'11/9 未去可補', img:'images/hallgrimskirkja.jpg?v=2'},
     {time:'18:00', act:'晚餐', tag:'eat'},
     {time:'20:00', act:'Sky Lagoon（可選）', tag:'act'}
   ]},
@@ -148,7 +149,7 @@ updateCountdown();
 const buttons=document.getElementById('day-buttons');const timeline=document.getElementById('timeline');
 days.forEach((d,i)=>{const btn=document.createElement('button');btn.className='day-btn'+(i===0?' active':'');btn.style.background=d.color;btn.style.color='#3E3A39';btn.textContent=d.date;btn.onclick=()=>selectDay(i);buttons.appendChild(btn);});
 function selectDay(idx){document.querySelectorAll('.day-btn').forEach((b,i)=>b.classList.toggle('active',i===idx));renderTimeline(idx);}
-function renderTimeline(idx){const d=days[idx];timeline.innerHTML=`<h3>${d.date} ${d.title}</h3>`;d.items.forEach(item=>{const div=document.createElement('div');div.className='item';const tagClass=item.tag==='drive'?'tag-drive':item.tag==='walk'?'tag-walk':item.tag==='eat'?'tag-eat':'tag-act';const tagText=item.tag==='drive'?'自駕':item.tag==='walk'?'步行':item.tag==='eat'?'用餐':'活動';let html=`<strong>${item.time}</strong> ${item.act} <span class="tag ${tagClass}">${tagText}</span>`;if(item.must)html+='<span class="must">必去</span>';if(item.toll)html+='<span class="toll">收費注意</span>';if(item.note)html+=`<span class="note">${item.note}</span>`;if(item.img)html+=`<br><img class="spot-img" src="${item.img}" alt="">`;div.innerHTML=html;timeline.appendChild(div);});if(d.stay){const box=document.createElement('div');box.className='stay-box';box.innerHTML=`<strong>今晚住宿</strong><h3>${d.stay.name}</h3><p>${d.stay.note}</p>`+(d.stay.img?`<img class="stay-img" src="${d.stay.img}" alt="">`:'');timeline.appendChild(box);}}
+function renderTimeline(idx){const d=days[idx];timeline.innerHTML=`<h3>${d.date} ${d.title}</h3>`;d.items.forEach(item=>{const div=document.createElement('div');div.className='item';const tagClass=item.tag==='drive'?'tag-drive':item.tag==='walk'?'tag-walk':item.tag==='eat'?'tag-eat':'tag-act';const tagText=item.tag==='drive'?'自駕':item.tag==='walk'?'步行':item.tag==='eat'?'用餐':'活動';let html=`<strong>${item.time}</strong> ${item.act} <span class="tag ${tagClass}">${tagText}</span>`;if(item.must)html+='<span class="must">必去</span>';if(item.toll)html+='<span class="toll">收費注意</span>';if(item.note)html+=`<span class="note">${item.note}</span>`;if(item.img)html+=`<br><img class="spot-img" src="${item.img}" alt="${item.act}"><div class="cap">${item.act}</div>`;div.innerHTML=html;timeline.appendChild(div);});if(d.stay){const box=document.createElement('div');box.className='stay-box';box.innerHTML=`<strong>今晚住宿</strong><h3>${d.stay.name}</h3><p>${d.stay.note}</p>`+(d.stay.img?`<img class="stay-img" src="${d.stay.img}" alt="">`:'');timeline.appendChild(box);}}
 selectDay(0);
 </script>
 </body>
