@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>冰島環島｜最終確認版</title>
+<link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet">
+<style>
+:root { --bg:#FFFCF6; --ink:#3E3A39; --coral:#F2A497; --yellow:#F6D27A; --blue:#A8D3E6; --green:#B9DAA5; --radius:28px; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font-family:'Huninn',sans-serif; line-height:1.6; padding-top:72px; }
+nav { position:fixed; top:0; left:0; right:0; background:var(--bg); border-bottom:3px solid var(--ink); z-index:100; display:flex; justify-content:center; gap:8px; padding:12px 16px; flex-wrap:wrap; }
+nav a { text-decoration:none; color:var(--ink); background:var(--yellow); border:3px solid var(--ink); border-radius:999px; padding:8px 18px; }
+.container { max-width:960px; margin:0 auto; padding:20px; }
+.card { background:var(--bg); border:3px solid var(--ink); border-radius:var(--radius); padding:20px; margin:16px 0; }
+.hero { text-align:center; padding:30px 20px; }
+.hero h1 { font-size:2.6rem; }
+.countdown { font-size:1.5rem; background:var(--coral); border:3px solid var(--ink); border-radius:var(--radius); display:inline-block; padding:12px 24px; margin-top:12px; }
+.day-switcher { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:20px; }
+.day-btn { border:3px solid var(--ink); border-radius:999px; padding:10px 16px; cursor:pointer; font-family:inherit; color:#3E3A39; }
+.day-btn.active { background:var(--coral)!important; }
+.timeline { position:relative; padding-left:30px; }
+.timeline::before { content:''; position:absolute; left:10px; top:0; bottom:0; width:4px; background:var(--ink); border-radius:2px; }
+.item { background:var(--bg); border:3px solid var(--ink); border-radius:20px; padding:14px 16px; margin:12px 0; position:relative; }
+.item::before { content:''; position:absolute; left:-26px; top:18px; width:14px; height:14px; background:var(--green); border:3px solid var(--ink); border-radius:50%; }
+.tag { display:inline-block; padding:2px 10px; border:2px solid var(--ink); border-radius:999px; font-size:0.8rem; margin-right:6px; }
+.tag-drive { background:var(--yellow); } .tag-walk { background:var(--green); } .tag-act { background:var(--coral); } .tag-eat { background:var(--blue); }
+.must { background:var(--coral); border:2px solid var(--ink); border-radius:8px; padding:1px 8px; font-size:0.8rem; margin-left:6px; }
+.toll { background:#FF6B6B; border:2px solid var(--ink); border-radius:8px; padding:1px 8px; font-size:0.8rem; margin-left:6px; font-weight:bold; }
+.note { background:var(--yellow); border:2px solid var(--ink); border-radius:8px; padding:1px 8px; font-size:0.8rem; margin-left:6px; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="#hero">首頁</a>
+  <a href="#flights">航班</a>
+  <a href="#itinerary">每日行程</a>
+  <a href="#stays">住宿</a>
+  <a href="#todo">待辦清單</a>
+</nav>
+<div class="container">
+  <section id="hero" class="hero">
+    <h1>冰島環島</h1>
+    <p>最終確認版 · 11/9–11/20</p>
+    <div class="countdown" id="countdown">出發倒數計算中…</div>
+  </section>
+  <section id="flights">
+    <h2>航班</h2>
+    <div class="card"><h3>去程 BA800</h3><p>11/9 10:50 抵達 KEF</p></div>
+    <div class="card"><h3>回程 BA801</h3><p>11/20 11:45 從 KEF 起飛</p></div>
+  </section>
+  <section id="itinerary">
+    <h2>每日行程</h2>
+    <div class="day-switcher" id="day-buttons"></div>
+    <div id="timeline" class="timeline"></div>
+  </section>
+  <section id="stays">
+    <h2>住宿資訊</h2>
+    <div class="card"><h3>11/9 Máni Apartments（雷市）</h3><p>可煮但今晚唔洗煮</p></div>
+    <div class="card"><h3>11/10 Hótel Lækur（Hella）</h3><p>唔洗煮·要預訂晚餐</p></div>
+    <div class="card"><h3>11/11 Black Beach Suites（Vík）</h3><p>要煮或入鎮食</p></div>
+    <div class="card"><h3>11/12 Erobik Apartments（Höfn）</h3><p>可煮也可出街食</p></div>
+    <div class="card"><h3>11/13 Eiðar Apartments</h3><p>要煮·鎮外唔餐廳</p></div>
+    <div class="card"><h3>11/14 Berjaya Mývatn</h3><p>唔洗煮</p></div>
+    <div class="card"><h3>11/15 Hótel Laugarbakki</h3><p>唔洗煮·食酒店</p></div>
+    <div class="card"><h3>11/16–17 Kirkjufell central apartment</h3><p>可煮·兩晚</p></div>
+    <div class="card"><h3>11/18 Hótel Vesturland</h3><p>唔洗煮</p></div>
+    <div class="card"><h3>11/19 Stay Apartments Einholt</h3><p>可煮</p></div>
+  </section>
+  <section id="todo">
+    <h2>待辦清單</h2>
+    <div class="card"><ul class="checklist"><li><input type="checkbox"> 護照確認</li><li><input type="checkbox"> 租車確認</li><li><input type="checkbox"> 藍湖預約</li><li><input type="checkbox"> 藍冰洞團確認（建議升級）</li><li><input type="checkbox"> 賞鯨團預約</li><li><input type="checkbox"> 查 road.is + 準備收費費用</li><li><input type="checkbox"> 還車時間確認</li></ul></div>
+  </section>
+</div>
+<script>
+const days = [
+  {date:'11/9', color:'#F2A497', title:'落地藍湖雷市', items:[{time:'10:50', act:'KEF BA800 降落', tag:'act', must:true},{time:'12:00', act:'KEF 抿車', tag:'drive'},{time:'12:20–13:20', act:'Lunch KEF', tag:'eat'},{time:'14:00–16:00', act:'藍湖', tag:'act', must:true},{time:'17:00', act:'入住 Máni Apartments', tag:'act'},{time:'17:50–18:20', act:'Hallgrímskirkja（可選）', tag:'walk', must:true, note:'時間不夠可改 11/19'},{time:'18:25–18:40', act:'Harpa', tag:'walk'},{time:'18:45–18:55', act:'太陽航海者', tag:'walk'},{time:'18:30', act:'晚餐 Messinn', tag:'eat'},{time:'20:30–21:30', act:'極光備案 Grótta（可選）', tag:'drive'}]},
+  {date:'11/10', color:'#F6D27A', title:'黃金圈 → Hella', items:[{time:'10:15–11:15', act:'Þingvellir', tag:'walk', must:true},{time:'12:00–12:45', act:'Geysir', tag:'walk', must:true},{time:'12:45–13:15', act:'Friðheimar（可選）', tag:'eat'},{time:'13:15–14:00', act:'Gullfoss', tag:'walk', must:true},{time:'14:00–14:30', act:'Kerið（可選）', tag:'walk'},{time:'14:30–15:15', act:'補給 Selfoss', tag:'drive'},{time:'16:30', act:'入住 Hótel Lækur', tag:'act'}]},
+  {date:'11/11', color:'#F6D27A', title:'南岸 Vík Chill', items:[{time:'08:30–09:15', act:'Seljalandsfoss', tag:'walk', must:true},{time:'09:45–10:30', act:'Skógafoss', tag:'walk', must:true},{time:'11:00–12:00', act:'午餐 Vík', tag:'eat'},{time:'12:30–13:00', act:'補給 Krónan', tag:'drive'},{time:'13:15–13:45', act:'Dyrhólaey（可選）', tag:'walk'},{time:'14:00–14:45', act:'Reynisfjara', tag:'walk', must:true},{time:'15:00', act:'入住 Black Beach Suites', tag:'act'}]},
+  {date:'11/12', color:'#B9DAA5', title:'藍冰洞 → Höfn', items:[{time:'全程注意', act:'⚠ 收費 Hornaförður', tag:'drive', toll:true},{time:'10:00–14:00', act:'藍冰洞團（建議升級 Extended）', tag:'act', must:true},{time:'14:30–15:30', act:'Jökulsárlón + Diamond Beach', tag:'walk', must:true},{time:'16:30–17:00', act:'補給 Nettó Höfn', tag:'drive'},{time:'17:30', act:'入住 Erobik Apartments', tag:'act'}]},
+  {date:'11/13', color:'#A8D3E6', title:'東部', items:[{time:'11:30–12:00', act:'Djúpivogur 鎮內短行', tag:'walk'},{time:'13:00–14:00', act:'Salt Café', tag:'eat'},{time:'15:30–16:15', act:'補給 Egilsstaðir', tag:'drive'},{time:'17:00', act:'入住 Eiðar Apartments', tag:'act'}]},
+  {date:'11/14', color:'#A8D3E6', title:'米湖', items:[{time:'10:30–11:15', act:'Dettifoss（可選）', tag:'walk'},{time:'11:30–12:15', act:'Hverir', tag:'walk', must:true},{time:'12:30–13:15', act:'Dimmuborgir', tag:'walk'},{time:'14:00–16:00', act:'米湖溫泉', tag:'act', must:true},{time:'16:30–18:00', act:'Vogafjós', tag:'eat'},{time:'18:30', act:'入住 Berjaya Mývatn', tag:'act'}]},
+  {date:'11/15', color:'#F2A497', title:'Goðafoss → Laugarbakki', items:[{time:'全程注意', act:'⚠ 收費隧道 Vaðlaheiðargöng', tag:'drive', toll:true},{time:'09:30–10:15', act:'Goðafoss', tag:'walk', must:true},{time:'11:30–12:30', act:'阿克雷里鎮內短行', tag:'walk'},{time:'12:00–13:30', act:'Lunch 阿克雷里 + 補給', tag:'eat'},{time:'16:30', act:'入住 Hótel Laugarbakki', tag:'act'}]},
+  {date:'11/16', color:'#F2A497', title:'斯奈山 Day 1', items:[{time:'11:30', act:'入住 Kirkjufell apartment', tag:'act'},{time:'12:00–12:40', act:'Grundarfjörður 短行（可選）', tag:'walk'},{time:'13:30–15:30', act:'Kirkjufell', tag:'walk', must:true},{time:'18:30', act:'Bjargarsteinn', tag:'eat'}]},
+  {date:'11/17', color:'#F2A497', title:'斯奈山 Day 2', items:[{time:'09:00–09:30', act:'海豹沙灘（可選）', tag:'walk'},{time:'09:45–10:05', act:'Búðakirkja', tag:'walk'},{time:'10:15–11:00', act:'Arnarstapi / Hellnar', tag:'walk'},{time:'11:30–12:15', act:'Saxhóll（可選）', tag:'walk'},{time:'18:00', act:'自己煮晚餐', tag:'eat'}]},
+  {date:'11/18', color:'#FFFCF6', title:'Borgarnes', items:[{time:'11:30–12:00', act:'補給 Nettó', tag:'drive'},{time:'12:00–12:40', act:'鎮內短行（可選）', tag:'walk'},{time:'12:30', act:'入住 Hótel Vesturland', tag:'act'},{time:'14:00–15:30', act:'Settlement Center（可選）', tag:'walk'},{time:'14:00–16:00', act:'陰茎博物館（可選）', tag:'walk'}]},
+  {date:'11/19', color:'#D4E8C8', title:'雷市賞鯨', items:[{time:'12:30', act:'入住 Stay Apartments', tag:'act'},{time:'13:00–16:00', act:'舊港賞鯨', tag:'act', must:true},{time:'16:30–17:30', act:'Hallgrímskirkja（可補）', tag:'walk', note:'11/9 未去可補'},{time:'18:00', act:'晚餐', tag:'eat'},{time:'20:00', act:'Sky Lagoon（可選）', tag:'act'}]},
+  {date:'11/20', color:'#D4E8C8', title:'還車離境', items:[{time:'09:30', act:'KEF 還車', tag:'drive'},{time:'11:45', act:'BA801 起飛', tag:'act', must:true}]}
+];
+function updateCountdown(){const target=new Date('2026-11-09T00:00:00');const daysLeft=Math.ceil((target-new Date())/86400000);document.getElementById('countdown').textContent=daysLeft>0?`出發倒數 ${daysLeft} 天`:(daysLeft===0?'今天出發！':'行程進行中或已結束');}
+updateCountdown();
+const buttons=document.getElementById('day-buttons');const timeline=document.getElementById('timeline');
+days.forEach((d,i)=>{const btn=document.createElement('button');btn.className='day-btn'+(i===0?' active':'');btn.style.background=d.color;btn.style.color='#3E3A39';btn.textContent=d.date;btn.onclick=()=>selectDay(i);buttons.appendChild(btn);});
+function selectDay(idx){document.querySelectorAll('.day-btn').forEach((b,i)=>b.classList.toggle('active',i===idx));renderTimeline(idx);}
+function renderTimeline(idx){const d=days[idx];timeline.innerHTML=`<h3>${d.date} ${d.title}</h3>`;d.items.forEach(item=>{const div=document.createElement('div');div.className='item';const tagClass=item.tag==='drive'?'tag-drive':item.tag==='walk'?'tag-walk':item.tag==='eat'?'tag-eat':'tag-act';const tagText=item.tag==='drive'?'自駕':item.tag==='walk'?'步行':item.tag==='eat'?'用餐':'活動';let html=`<strong>${item.time}</strong> ${item.act} <span class="tag ${tagClass}">${tagText}</span>`;if(item.must)html+='<span class="must">必去</span>';if(item.toll)html+='<span class="toll">收費注意</span>';if(item.note)html+=`<span class="note">${item.note}</span>`;div.innerHTML=html;timeline.appendChild(div);});}
+selectDay(0);
+</script>
+</body>
+</html>
