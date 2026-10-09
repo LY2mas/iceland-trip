@@ -62,16 +62,16 @@ const days = [
     {time:'17:00', act:'入住 Máni Apartments', tag:'act'},
     {time:'17:50–18:20', act:'Hallgrímskirkja（可選）', tag:'walk', must:true, note:'時間不夠可改 11/19', img:'images/hallgrimskirkja.jpg?v=2'},
     {time:'18:25–18:40', act:'Harpa', tag:'walk', img:'images/harpa-concert.jpg?v=3'},
-    {time:'18:45–18:55', act:'太陽航海者', tag:'walk'},
+    {time:'18:45–18:55', act:'太陽航海者', img:'images/sun-voyager.jpg?v=4', tag:'walk'},
     {time:'18:30', act:'晚餐 Messinn', tag:'eat'},
-    {time:'20:30–21:30', act:'極光備案 Grótta（可選）', tag:'drive'}
+    {time:'20:30–21:30', act:'極光備案 Grótta（可選）', img:'images/grotta.jpg?v=4', tag:'drive'}
   ]},
   {date:'11/10', color:'#F6D27A', title:'黃金圈 → Hella', stay:{name:'Hótel Lækur（Hella）', note:'唔洗煮·要預訂晚餐', img:'images/stay-laekur.jpg'}, items:[
     {time:'10:15–11:15', act:'Þingvellir', tag:'walk', must:true, img:'images/thingvellir.jpg'},
     {time:'12:00–12:45', act:'Geysir', tag:'walk', must:true, img:'images/geysir.jpg'},
-    {time:'12:45–13:15', act:'Friðheimar（可選）', tag:'eat'},
+    {time:'12:45–13:15', act:'Friðheimar（可選）', img:'images/fridheimar.jpg?v=4', tag:'eat'},
     {time:'13:15–14:00', act:'Gullfoss', tag:'walk', must:true, img:'images/gullfoss.jpg'},
-    {time:'14:00–14:30', act:'Kerið（可選）', tag:'walk'},
+    {time:'14:00–14:30', act:'Kerið（可選）', img:'images/kerid.jpg?v=4', tag:'walk'},
     {time:'14:30–15:15', act:'補給 Selfoss', tag:'drive'},
     {time:'16:30', act:'入住 Hótel Lækur', tag:'act'}
   ]},
@@ -80,35 +80,35 @@ const days = [
     {time:'09:45–10:30', act:'Skógafoss', tag:'walk', must:true, img:'images/skogafoss.jpg'},
     {time:'11:00–12:00', act:'午餐 Vík', tag:'eat'},
     {time:'12:30–13:00', act:'補給 Krónan', tag:'drive'},
-    {time:'13:15–13:45', act:'Dyrhólaey（可選）', tag:'walk'},
+    {time:'13:15–13:45', act:'Dyrhólaey（可選）', img:'images/dyrholaey.jpg?v=4', tag:'walk'},
     {time:'14:00–14:45', act:'Reynisfjara', tag:'walk', must:true, img:'images/reynisfjara.jpg'},
     {time:'15:00', act:'入住 Black Beach Suites', tag:'act'}
   ]},
   {date:'11/12', color:'#B9DAA5', title:'藍冰洞 → Höfn', stay:{name:'Erobik Apartments（Höfn）', note:'可煮也可出街食', img:'images/stay-erobik.jpg'}, items:[
     {time:'全程注意', act:'⚠ 收費 Hornaförður', tag:'drive', toll:true},
-    {time:'10:00–14:00', act:'藍冰洞團（建議升級 Extended）', tag:'act', must:true},
-    {time:'14:30–15:30', act:'Jökulsárlón + Diamond Beach', tag:'walk', must:true, img:'images/jokulsarlon.jpg'},
+    {time:'10:00–14:00', act:'藍冰洞團（建議升級 Extended）', img:'images/blue-ice-cave.jpg?v=4', tag:'act', must:true},
+    {time:'14:30–15:30', act:'Jökulsárlón + Diamond Beach', tag:'walk', must:true, img:'images/jokulsarlon.jpg', img2:'images/diamond-beach-v2.jpg?v=4'},
     {time:'16:30–17:00', act:'補給 Nettó Höfn', tag:'drive'},
     {time:'17:30', act:'入住 Erobik Apartments', tag:'act'}
   ]},
   {date:'11/13', color:'#A8D3E6', title:'東部', stay:{name:'Eiðar Apartments', note:'要煮·鎮外唔餐廳', img:'images/stay-eidar.jpg'}, items:[
-    {time:'11:30–12:00', act:'Djúpivogur 鎮內短行', tag:'walk'},
+    {time:'11:30–12:00', act:'Djúpivogur 鎮內短行', img:'images/djupivogur.jpg?v=4', tag:'walk'},
     {time:'13:00–14:00', act:'Salt Café', tag:'eat'},
     {time:'15:30–16:15', act:'補給 Egilsstaðir', tag:'drive'},
     {time:'17:00', act:'入住 Eiðar Apartments', tag:'act'}
   ]},
   {date:'11/14', color:'#A8D3E6', title:'米湖', stay:{name:'Berjaya Mývatn', note:'唔洗煮·未有酒店實圖'}, items:[
-    {time:'10:30–11:15', act:'Dettifoss（可選）', tag:'walk'},
+    {time:'10:30–11:15', act:'Dettifoss（可選）', img:'images/dettifoss.jpg?v=4', tag:'walk'},
     {time:'11:30–12:15', act:'Hverir', tag:'walk', must:true, img:'images/hverir-namafjall.jpg?v=3'},
-    {time:'12:30–13:15', act:'Dimmuborgir', tag:'walk'},
-    {time:'14:00–16:00', act:'米湖溫泉', tag:'act', must:true},
+    {time:'12:30–13:15', act:'Dimmuborgir', img:'images/dimmuborgir.jpg?v=4', tag:'walk'},
+    {time:'14:00–16:00', act:'米湖溫泉', img:'images/myvatn-baths.jpg?v=4', tag:'act', must:true},
     {time:'16:30–18:00', act:'Vogafjós', tag:'eat'},
     {time:'18:30', act:'入住 Berjaya Mývatn', tag:'act'}
   ]},
   {date:'11/15', color:'#F2A497', title:'Goðafoss → Laugarbakki', stay:{name:'Hótel Laugarbakki', note:'唔洗煮·食酒店·未有酒店實圖'}, items:[
     {time:'全程注意', act:'⚠ 收費隧道 Vaðlaheiðargöng', tag:'drive', toll:true},
     {time:'09:30–10:15', act:'Goðafoss', tag:'walk', must:true, img:'images/godafoss.jpg'},
-    {time:'11:30–12:30', act:'阿克雷里鎮內短行', tag:'walk'},
+    {time:'11:30–12:30', act:'阿克雷里鎮內短行', img:'images/akureyri.jpg?v=4', tag:'walk'},
     {time:'12:00–13:30', act:'Lunch 阿克雷里 + 補給', tag:'eat'},
     {time:'16:30', act:'入住 Hótel Laugarbakki', tag:'act'}
   ]},
@@ -119,25 +119,25 @@ const days = [
     {time:'18:30', act:'Bjargarsteinn', tag:'eat'}
   ]},
   {date:'11/17', color:'#F2A497', title:'斯奈山 Day 2', stay:{name:'Kirkjufell central apartment', note:'第二晚·可煮·未有公寓實圖'}, items:[
-    {time:'09:00–09:30', act:'海豹沙灘（可選）', tag:'walk'},
-    {time:'09:45–10:05', act:'Búðakirkja', tag:'walk'},
-    {time:'10:15–11:00', act:'Arnarstapi / Hellnar', tag:'walk'},
-    {time:'11:30–12:15', act:'Saxhóll（可選）', tag:'walk'},
+    {time:'09:00–09:30', act:'海豹沙灘（可選）', img:'images/ytri-tunga.jpg?v=4', tag:'walk'},
+    {time:'09:45–10:05', act:'Búðakirkja', img:'images/budakirkja.jpg?v=4', tag:'walk'},
+    {time:'10:15–11:00', act:'Arnarstapi / Hellnar', img:'images/arnarstapi.jpg?v=4', tag:'walk'},
+    {time:'11:30–12:15', act:'Saxhóll（可選）', img:'images/saxholl.jpg?v=4', tag:'walk'},
     {time:'18:00', act:'自己煮晚餐', tag:'eat'}
   ]},
   {date:'11/18', color:'#FFFCF6', title:'Borgarnes', stay:{name:'Hótel Vesturland（Borgarnes）', note:'唔洗煮·未有酒店實圖'}, items:[
     {time:'11:30–12:00', act:'補給 Nettó', tag:'drive'},
-    {time:'12:00–12:40', act:'鎮內短行（可選）', tag:'walk'},
+    {time:'12:00–12:40', act:'鎮內短行（可選）', img:'images/borgarnes.jpg?v=4', tag:'walk'},
     {time:'12:30', act:'入住 Hótel Vesturland', tag:'act'},
     {time:'14:00–15:30', act:'Settlement Center（可選）', tag:'walk'},
     {time:'14:00–16:00', act:'陰茎博物館（可選）', tag:'walk'}
   ]},
   {date:'11/19', color:'#D4E8C8', title:'雷市賞鯨', stay:{name:'Stay Apartments Einholt（雷市）', note:'可煮·未有公寓實圖'}, items:[
     {time:'12:30', act:'入住 Stay Apartments', tag:'act'},
-    {time:'13:00–16:00', act:'舊港賞鯨', tag:'act', must:true},
+    {time:'13:00–16:00', act:'舊港賞鯨', img:'images/whale-watching.jpg?v=4', tag:'act', must:true},
     {time:'16:30–17:30', act:'Hallgrímskirkja（可補）', tag:'walk', note:'11/9 未去可補', img:'images/hallgrimskirkja.jpg?v=2'},
     {time:'18:00', act:'晚餐', tag:'eat'},
-    {time:'20:00', act:'Sky Lagoon（可選）', tag:'act'}
+    {time:'20:00', act:'Sky Lagoon（可選）', img:'images/sky-lagoon.jpg?v=4', tag:'act'}
   ]},
   {date:'11/20', color:'#D4E8C8', title:'還車離境', items:[
     {time:'09:30', act:'KEF 還車', tag:'drive'},
@@ -149,7 +149,8 @@ updateCountdown();
 const buttons=document.getElementById('day-buttons');const timeline=document.getElementById('timeline');
 days.forEach((d,i)=>{const btn=document.createElement('button');btn.className='day-btn'+(i===0?' active':'');btn.style.background=d.color;btn.style.color='#3E3A39';btn.textContent=d.date;btn.onclick=()=>selectDay(i);buttons.appendChild(btn);});
 function selectDay(idx){document.querySelectorAll('.day-btn').forEach((b,i)=>b.classList.toggle('active',i===idx));renderTimeline(idx);}
-function renderTimeline(idx){const d=days[idx];timeline.innerHTML=`<h3>${d.date} ${d.title}</h3>`;d.items.forEach(item=>{const div=document.createElement('div');div.className='item';const tagClass=item.tag==='drive'?'tag-drive':item.tag==='walk'?'tag-walk':item.tag==='eat'?'tag-eat':'tag-act';const tagText=item.tag==='drive'?'自駕':item.tag==='walk'?'步行':item.tag==='eat'?'用餐':'活動';let html=`<strong>${item.time}</strong> ${item.act} <span class="tag ${tagClass}">${tagText}</span>`;if(item.must)html+='<span class="must">必去</span>';if(item.toll)html+='<span class="toll">收費注意</span>';if(item.note)html+=`<span class="note">${item.note}</span>`;if(item.img)html+=`<br><img class="spot-img" src="${item.img}" alt="${item.act}"><div class="cap">${item.act}</div>`;div.innerHTML=html;timeline.appendChild(div);});if(d.stay){const box=document.createElement('div');box.className='stay-box';box.innerHTML=`<strong>今晚住宿</strong><h3>${d.stay.name}</h3><p>${d.stay.note}</p>`+(d.stay.img?`<img class="stay-img" src="${d.stay.img}" alt="">`:'');timeline.appendChild(box);}}
+function renderTimeline(idx){const d=days[idx];timeline.innerHTML=`<h3>${d.date} ${d.title}</h3>`;d.items.forEach(item=>{const div=document.createElement('div');div.className='item';const tagClass=item.tag==='drive'?'tag-drive':item.tag==='walk'?'tag-walk':item.tag==='eat'?'tag-eat':'tag-act';const tagText=item.tag==='drive'?'自駕':item.tag==='walk'?'步行':item.tag==='eat'?'用餐':'活動';let html=`<strong>${item.time}</strong> ${item.act} <span class="tag ${tagClass}">${tagText}</span>`;if(item.must)html+='<span class="must">必去</span>';if(item.toll)html+='<span class="toll">收費注意</span>';if(item.note)html+=`<span class="note">${item.note}</span>`;if(item.img)html+=`<br><img class="spot-img" src="${item.img}" alt="${item.act}"><div class="cap">${item.act}</div>`;
+if(item.img2)html+=`<br><img class="spot-img" src="${item.img2}" alt=""><div class="cap">Diamond Beach</div>`;div.innerHTML=html;timeline.appendChild(div);});if(d.stay){const box=document.createElement('div');box.className='stay-box';box.innerHTML=`<strong>今晚住宿</strong><h3>${d.stay.name}</h3><p>${d.stay.note}</p>`+(d.stay.img?`<img class="stay-img" src="${d.stay.img}" alt="">`:'');timeline.appendChild(box);}}
 selectDay(0);
 </script>
 </body>
