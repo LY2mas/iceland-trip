@@ -67,15 +67,17 @@ const days = [
     {time:'20:30–21:30', act:'極光備案 Grótta（可選）', img:'images/grotta.jpg?v=4', tag:'drive'}
   ]},
   {date:'11/10', color:'#F6D27A', title:'黃金圈 → Hella', stay:{name:'Hótel Lækur（Hella）', note:'唔洗煮·要預訂晚餐', img:'images/stay-laekur.jpg'}, items:[
-    {time:'10:15–11:15', act:'Þingvellir', tag:'walk', must:true, img:'images/thingvellir.jpg'},
-    {time:'12:00–12:45', act:'Geysir', tag:'walk', must:true, img:'images/geysir.jpg'},
-    {time:'12:45–13:15', act:'Friðheimar（可選）', img:'images/fridheimar.jpg?v=4', tag:'eat'},
-    {time:'13:15–14:00', act:'Gullfoss', tag:'walk', must:true, img:'images/gullfoss.jpg'},
-    {time:'14:00–14:30', act:'Kerið（可選）', img:'images/kerid.jpg?v=4', tag:'walk'},
-    {time:'14:30–15:15', act:'補給 Selfoss', tag:'drive'},
-    {time:'16:30', act:'入住 Hótel Lækur', tag:'act'}
+    {time:'07:30', act:'建議起身（雷市）', tag:'act', note:'準備出發'},
+    {time:'08:30', act:'出發去黃金圈', tag:'drive'},
+    {time:'09:15–10:15', act:'Þingvellir', tag:'walk', must:true, img:'images/thingvellir.jpg'},
+    {time:'11:00–11:45', act:'Geysir', tag:'walk', must:true, img:'images/geysir.jpg'},
+    {time:'12:00–12:45', act:'Gullfoss', tag:'walk', must:true, img:'images/gullfoss.jpg'},
+    {time:'13:15–14:00', act:'Friðheimar（可選·午餐）', img:'images/fridheimar.jpg?v=4', tag:'eat'},
+    {time:'14:30–15:00', act:'Kerið（可選）', img:'images/kerid.jpg?v=4', tag:'walk'},
+    {time:'15:30–16:15', act:'補給 Selfoss', tag:'drive'},
+    {time:'17:00', act:'入住 Hótel Lækur', tag:'act'}
   ]},
-  {date:'11/11', color:'#F6D27A', title:'南岸 Vík Chill', stay:{name:'Black Beach Suites（Vík）', note:'要煮或入鎮食', img:'images/stay-black-beach.jpg'}, items:[
+  {date:'11/11', color:'#F6D27A', title:'南岸 Vík Chill（建議 07:00 起身）', stay:{name:'Black Beach Suites（Vík）', note:'要煮或入鎮食', img:'images/stay-black-beach.jpg'}, items:[
     {time:'08:30–09:15', act:'Seljalandsfoss', tag:'walk', must:true, img:'images/seljalandsfoss.jpg'},
     {time:'09:45–10:30', act:'Skógafoss', tag:'walk', must:true, img:'images/skogafoss.jpg'},
     {time:'11:00–12:00', act:'午餐 Vík', tag:'eat'},
@@ -84,7 +86,7 @@ const days = [
     {time:'14:00–14:45', act:'Reynisfjara', tag:'walk', must:true, img:'images/reynisfjara.jpg'},
     {time:'15:00', act:'入住 Black Beach Suites', tag:'act'}
   ]},
-  {date:'11/12', color:'#B9DAA5', title:'藍冰洞 → Höfn', stay:{name:'Erobik Apartments（Höfn）', note:'可煮也可出街食', img:'images/stay-erobik.jpg'}, items:[
+  {date:'11/12', color:'#B9DAA5', title:'藍冰洞 → Höfn（建議 07:30 起身）', stay:{name:'Erobik Apartments（Höfn）', note:'可煮也可出街食', img:'images/stay-erobik.jpg'}, items:[
     {time:'全程注意', act:'⚠ 收費 Hornaförður', tag:'drive', toll:true},
     {time:'10:00–14:00', act:'藍冰洞團（建議升級 Extended）', img:'images/blue-ice-cave.jpg?v=4', tag:'act', must:true},
     {time:'14:30–15:30', act:'Jökulsárlón + Diamond Beach', tag:'walk', must:true, img:'images/jokulsarlon.jpg', img2:'images/diamond-beach-v2.jpg?v=4'},
@@ -97,7 +99,7 @@ const days = [
     {time:'15:30–16:15', act:'補給 Egilsstaðir', tag:'drive'},
     {time:'17:00', act:'入住 Eiðar Apartments', tag:'act'}
   ]},
-  {date:'11/14', color:'#A8D3E6', title:'米湖', stay:{name:'Berjaya Mývatn', note:'唔洗煮·未有酒店實圖'}, items:[
+  {date:'11/14', color:'#A8D3E6', title:'米湖（建議 08:00 起身）', stay:{name:'Berjaya Mývatn', note:'唔洗煮·未有酒店實圖'}, items:[
     {time:'10:30–11:15', act:'Dettifoss（可選）', img:'images/dettifoss.jpg?v=4', tag:'walk'},
     {time:'11:30–12:15', act:'Hverir', tag:'walk', must:true, img:'images/hverir-namafjall.jpg?v=3'},
     {time:'12:30–13:15', act:'Dimmuborgir', img:'images/dimmuborgir.jpg?v=4', tag:'walk'},
@@ -105,7 +107,7 @@ const days = [
     {time:'16:30–18:00', act:'Vogafjós', tag:'eat'},
     {time:'18:30', act:'入住 Berjaya Mývatn', tag:'act'}
   ]},
-  {date:'11/15', color:'#F2A497', title:'Goðafoss → Laugarbakki', stay:{name:'Hótel Laugarbakki', note:'唔洗煮·食酒店·未有酒店實圖'}, items:[
+  {date:'11/15', color:'#F2A497', title:'Goðafoss → Laugarbakki（建議 07:30 起身）', stay:{name:'Hótel Laugarbakki', note:'唔洗煮·食酒店·未有酒店實圖'}, items:[
     {time:'全程注意', act:'⚠ 收費隧道 Vaðlaheiðargöng', tag:'drive', toll:true},
     {time:'09:30–10:15', act:'Goðafoss', tag:'walk', must:true, img:'images/godafoss.jpg'},
     {time:'11:30–12:30', act:'阿克雷里鎮內短行', img:'images/akureyri.jpg?v=4', tag:'walk'},
@@ -139,7 +141,7 @@ const days = [
     {time:'18:00', act:'晚餐', tag:'eat'},
     {time:'20:00', act:'Sky Lagoon（可選）', img:'images/sky-lagoon.jpg?v=4', tag:'act'}
   ]},
-  {date:'11/20', color:'#D4E8C8', title:'還車離境', items:[
+  {date:'11/20', color:'#D4E8C8', title:'還車離境（建議 07:00 起身）', items:[
     {time:'09:30', act:'KEF 還車', tag:'drive'},
     {time:'11:45', act:'BA801 起飛', tag:'act', must:true}
   ]}
