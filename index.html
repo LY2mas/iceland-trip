@@ -30,13 +30,19 @@ nav a { text-decoration:none; color:var(--ink); background:var(--yellow); border
 .toll { background:#FF6B6B; border:2px solid var(--ink); border-radius:8px; padding:1px 8px; font-size:0.8rem; margin-left:6px; font-weight:bold; }
 .note { background:var(--yellow); border:2px solid var(--ink); border-radius:8px; padding:1px 8px; font-size:0.8rem; margin-left:6px; }
 .cap { font-size:0.85rem; margin-top:4px; }
-.spot-img,.hero-img,.stay-img { width:100%; max-width:520px; border-radius:16px; border:3px solid var(--ink); margin:8px 0; display:block; }
+.spot-img,.hero-img,.stay-img,.shop-img { width:100%; max-width:520px; border-radius:16px; border:3px solid var(--ink); margin:8px 0; display:block; }
 .checklist li { list-style:none; margin:10px 0; display:flex; align-items:center; gap:10px; }
+.shop-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
+.shop-item { background:var(--bg); border:3px solid var(--ink); border-radius:20px; padding:14px; }
 </style>
 </head>
 <body>
 <nav>
-  <a href="#hero">首頁</a><a href="#flights">航班</a><a href="#itinerary">每日行程</a><a href="#todo">待辦清單</a>
+  <a href="#hero">首頁</a>
+  <a href="#flights">航班</a>
+  <a href="#itinerary">每日行程</a>
+  <a href="#shopping">購物</a>
+  <a href="#todo">待辦清單</a>
 </nav>
 <div class="container">
   <section id="hero" class="hero">
@@ -50,13 +56,58 @@ nav a { text-decoration:none; color:var(--ink); background:var(--yellow); border
     <div class="card"><h3>回程 BA801</h3><p>11/20 11:45 從 KEF 起飛</p></div>
   </section>
   <section id="itinerary"><h2>每日行程</h2><div class="day-switcher" id="day-buttons"></div><div id="timeline" class="timeline"></div></section>
+
+  <section id="shopping"><h2>購物 · 冰島必買</h2>
+    <p style="text-align:center;margin-bottom:16px;">主要喺雷市 Laugavegur / Skólavörðustígur 一帶，11/9 同 11/19 有時間可以去。</p>
+    <div class="shop-grid">
+      <div class="shop-item">
+        <img class="shop-img" src="images/shop-lopapeysa.jpg" alt="Lopapeysa">
+        <h3>Lopapeysa 羊毛衫</h3>
+        <p>最經典必買。手織冰島羊毛，暖又防水。建議去 Handknitting Association（Skólavörðustígur）。</p>
+      </div>
+      <div class="shop-item">
+        <img class="shop-img" src="images/shop-fischersund.jpg" alt="Fischersund">
+        <h3>Fischersund 香水</h3>
+        <p>Sigur Rós 成員開嘅香水店，氣味獨特，好適合當手信。</p>
+      </div>
+      <div class="shop-item">
+        <img class="shop-img" src="images/shop-66north.jpg" alt="66°North">
+        <h3>66°North</h3>
+        <p>冰島本地戶外品牌，防水外套同技術服好出名。</p>
+      </div>
+      <div class="shop-item">
+        <img class="shop-img" src="images/shop-omnom.jpg" alt="Omnom Chocolate">
+        <h3>Omnom Chocolate</h3>
+        <p>雷市手工朱古力，包裝靚，味道特別，超市或專賣店都有。</p>
+      </div>
+      <div class="shop-item">
+        <img class="shop-img" src="images/shop-saltverk.jpg" alt="Saltverk">
+        <h3>Saltverk 海鹽</h3>
+        <p>地熱海鹽，有原味同煙燻味，好實用手信。</p>
+      </div>
+      <div class="shop-item">
+        <img class="shop-img" src="images/shop-bluelagoon.jpg" alt="Blue Lagoon Skincare">
+        <h3>Blue Lagoon 護膚品</h3>
+        <p>藍湖矽泥面膜同護理產品，機場同雷市都有售。</p>
+      </div>
+    </div>
+    <div class="card" style="margin-top:16px;">
+      <h3>其他常買</h3>
+      <ul>
+        <li>甘草糖（Saltlakris / Nói Síríus）— 超市就有</li>
+        <li>Brennivín（黑死病酒）— 要去 Vínbúðin 或機場免稅</li>
+        <li>羊毛帽、手套、頸巾 — 同 Lopapeysa 一齊買</li>
+      </ul>
+    </div>
+  </section>
+
   <section id="todo"><h2>待辦清單</h2><div class="card"><ul class="checklist"><li><input type="checkbox"> 護照確認</li><li><input type="checkbox"> 租車確認</li><li><input type="checkbox"> 藍湖預約</li><li><input type="checkbox"> 藍冰洞團確認（建議升級）</li><li><input type="checkbox"> 賞鯨團預約</li><li><input type="checkbox"> 查 road.is + 準備收費費用</li><li><input type="checkbox"> 還車時間確認</li></ul></div></section>
 </div>
 <script>
 const days = [
   {date:'11/9', color:'#F2A497', title:'落地藍湖雷市', stay:{name:'Máni Apartments（雷市 Laugavegur）', note:'可煮但今晚唔洗煮', img:'images/stay-mani.jpg'}, items:[
     {time:'10:50', act:'KEF BA800 降落', tag:'act', must:true},
-    {time:'12:00', act:'KEF 拎車', tag:'drive'},
+    {time:'12:00', act:'KEF 捋車', tag:'drive'},
     {time:'12:20–13:20', act:'Lunch KEF', tag:'eat'},
     {time:'14:00–16:00', act:'藍湖', tag:'act', must:true, img:'images/blue-lagoon.jpg'},
     {time:'17:00', act:'入住 Máni Apartments', tag:'act'},
@@ -87,7 +138,7 @@ const days = [
     {time:'15:00', act:'入住 Black Beach Suites', tag:'act'}
   ]},
   {date:'11/12', color:'#B9DAA5', title:'藍冰洞 → Höfn（建議 07:30 起身）', stay:{name:'Erobik Apartments（Höfn）', note:'可煮也可出街食', img:'images/stay-erobik.jpg'}, items:[
-    {time:'全程注意', act:'⚠ 收費 Hornaförður', tag:'drive', toll:true},
+    {time:'全程注意', act:'⚠ 收費 Hornaörður', tag:'drive', toll:true},
     {time:'10:00–14:00', act:'藍冰洞團（建議升級 Extended）', img:'images/blue-ice-cave.jpg?v=4', tag:'act', must:true},
     {time:'14:30–15:30', act:'Jökulsárlón + Diamond Beach', tag:'walk', must:true, img:'images/jokulsarlon.jpg', img2:'images/diamond-beach-v2.jpg?v=4'},
     {time:'16:30–17:00', act:'補給 Nettó Höfn', tag:'drive'},
@@ -151,8 +202,8 @@ updateCountdown();
 const buttons=document.getElementById('day-buttons');const timeline=document.getElementById('timeline');
 days.forEach((d,i)=>{const btn=document.createElement('button');btn.className='day-btn'+(i===0?' active':'');btn.style.background=d.color;btn.style.color='#3E3A39';btn.textContent=d.date;btn.onclick=()=>selectDay(i);buttons.appendChild(btn);});
 function selectDay(idx){document.querySelectorAll('.day-btn').forEach((b,i)=>b.classList.toggle('active',i===idx));renderTimeline(idx);}
-function renderTimeline(idx){const d=days[idx];timeline.innerHTML=`<h3>${d.date} ${d.title}</h3>`;d.items.forEach(item=>{const div=document.createElement('div');div.className='item';const tagClass=item.tag==='drive'?'tag-drive':item.tag==='walk'?'tag-walk':item.tag==='eat'?'tag-eat':'tag-act';const tagText=item.tag==='drive'?'自駕':item.tag==='walk'?'步行':item.tag==='eat'?'用餐':'活動';let html=`<strong>${item.time}</strong> ${item.act} <span class="tag ${tagClass}">${tagText}</span>`;if(item.must)html+='<span class="must">必去</span>';if(item.toll)html+='<span class="toll">收費注意</span>';if(item.note)html+=`<span class="note">${item.note}</span>`;if(item.img)html+=`<br><img class="spot-img" src="${item.img}" alt="${item.act}"><div class="cap">${item.act}</div>`;
-if(item.img2)html+=`<br><img class="spot-img" src="${item.img2}" alt=""><div class="cap">Diamond Beach</div>`;div.innerHTML=html;timeline.appendChild(div);});if(d.stay){const box=document.createElement('div');box.className='stay-box';box.innerHTML=`<strong>今晚住宿</strong><h3>${d.stay.name}</h3><p>${d.stay.note}</p>`+(d.stay.img?`<img class="stay-img" src="${d.stay.img}" alt="">`:'');timeline.appendChild(box);}}
+function renderTimeline(idx){const d=days[idx];timeline.innerHTML=`<h3>${d.date} ${d.title}</h3>`;d.items.forEach(item=>{const div=document.createElement('div');div.className='item';const tagClass=item.tag==='drive'?'tag-drive':item.tag==='walk'?'tag-walk':item.tag==='eat'?'tag-eat':'tag-act';const tagText=item.tag==='drive'?'自駕':item.tag==='walk'?'步行':item.tag==='eat'?'用餐':'活動';let html=`<strong>${item.time}</strong> ${item.act} <span class=\"tag ${tagClass}\">${tagText}</span>`;if(item.must)html+='<span class=\"must\">必去</span>';if(item.toll)html+='<span class=\"toll\">收費注意</span>';if(item.note)html+=`<span class=\"note\">${item.note}</span>`;if(item.img)html+=`<br><img class=\"spot-img\" src=\"${item.img}\" alt=\"${item.act}\"><div class=\"cap\">${item.act}</div>`;
+if(item.img2)html+=`<br><img class=\"spot-img\" src=\"${item.img2}\" alt=\"\"><div class=\"cap\">Diamond Beach</div>`;div.innerHTML=html;timeline.appendChild(div);});if(d.stay){const box=document.createElement('div');box.className='stay-box';box.innerHTML=`<strong>今晚住宿</strong><h3>${d.stay.name}</h3><p>${d.stay.note}</p>`+(d.stay.img?`<img class=\"stay-img\" src=\"${d.stay.img}\" alt=\"\">`:'');timeline.appendChild(box);}}
 selectDay(0);
 </script>
 </body>
