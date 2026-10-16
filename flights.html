@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>冰島環島｜最終確認版</title>
+<link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet">
+<style>
+:root { --bg:#FFFCF6; --ink:#3E3A39; --coral:#F2A497; --yellow:#F6D27A; --blue:#A8D3E6; --green:#B9DAA5; --radius:28px; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font-family:'Huninn',sans-serif; line-height:1.6; padding-top:72px; }
+nav { position:fixed; top:0; left:0; right:0; background:var(--bg); border-bottom:3px solid var(--ink); z-index:100; display:flex; justify-content:center; gap:8px; padding:12px 16px; flex-wrap:wrap; }
+nav a { text-decoration:none; color:var(--ink); background:var(--yellow); border:3px solid var(--ink); border-radius:999px; padding:8px 18px; }
+nav a.active { background:var(--coral); }
+.container { max-width:960px; margin:0 auto; padding:20px; }
+.card { background:var(--bg); border:3px solid var(--ink); border-radius:var(--radius); padding:20px; margin:16px 0; }
+.hero { text-align:center; padding:30px 20px; }
+.hero h1 { font-size:2.6rem; }
+.countdown { font-size:1.5rem; background:var(--coral); border:3px solid var(--ink); border-radius:var(--radius); display:inline-block; padding:12px 24px; margin-top:12px; }
+.day-switcher { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:20px; }
+.day-btn { border:3px solid var(--ink); border-radius:999px; padding:10px 16px; cursor:pointer; font-family:inherit; color:#3E3A39; }
+.day-btn.active { background:var(--coral)!important; }
+.timeline { position:relative; padding-left:30px; }
+.timeline::before { content:''; position:absolute; left:10px; top:0; bottom:0; width:4px; background:var(--ink); border-radius:2px; }
+.item { background:var(--bg); border:3px solid var(--ink); border-radius:20px; padding:14px 16px; margin:12px 0; position:relative; }
+.item::before { content:''; position:absolute; left:-26px; top:18px; width:14px; height:14px; background:var(--green); border:3px solid var(--ink); border-radius:50%; }
+.stay-box { background:var(--blue); border:3px solid var(--ink); border-radius:20px; padding:16px; margin:18px 0 8px; }
+.tag { display:inline-block; padding:2px 10px; border:2px solid var(--ink); border-radius:999px; font-size:0.8rem; margin-right:6px; }
+.tag-drive { background:var(--yellow); } .tag-walk { background:var(--green); } .tag-act { background:var(--coral); } .tag-eat { background:var(--blue); }
+.must { background:var(--coral); border:2px solid var(--ink); border-radius:8px; padding:1px 8px; font-size:0.8rem; margin-left:6px; }
+.toll { background:#FF6B6B; border:2px solid var(--ink); border-radius:8px; padding:1px 8px; font-size:0.8rem; margin-left:6px; font-weight:bold; }
+.note { background:var(--yellow); border:2px solid var(--ink); border-radius:8px; padding:1px 8px; font-size:0.8rem; margin-left:6px; }
+.cap { font-size:0.85rem; margin-top:4px; }
+.spot-img,.hero-img,.stay-img,.shop-img { width:100%; max-width:520px; border-radius:16px; border:3px solid var(--ink); margin:8px 0; display:block; }
+.checklist li { list-style:none; margin:10px 0; display:flex; align-items:center; gap:10px; }
+.shop-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
+.shop-item { background:var(--bg); border:3px solid var(--ink); border-radius:20px; padding:14px; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html">首頁</a>
+  <a href="flights.html">航班</a>
+  <a href="itinerary.html">每日行程</a>
+  <a href="shopping.html">購物</a>
+  <a href="todo.html">待辦清單</a>
+</nav>
+<div class="container">
+  <h2>航班</h2>
+  <div class="card"><h3>去程 BA800</h3><p>11/9 10:50 抵達 KEF</p></div>
+  <div class="card"><h3>回程 BA801</h3><p>11/20 11:45 從 KEF 起飛</p></div>
+</div>
+<script>document.querySelector('nav a[href="flights.html"]').classList.add('active');</script>
+</body>
+</html>
