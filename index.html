@@ -107,12 +107,12 @@ const days = [
     {time:'14:00–14:45', act:'補給 Egilsstaðir（目標早到）', tag:'drive'},
     {time:'17:00', act:'入住 Eiðar Apartments', tag:'act'}
   ]},
-  {date:'11/14', color:'#A8D3E6', title:'米湖（建議 08:00 起身）', stay:{name:'Berjaya Mývatn', note:'唔洗煮·未有酒店實圖'}, items:[
+  {date:'11/14', color:'#A8D3E6', title:'米湖（建議 08:00 起身）', stay:{name:'Berjaya Hotel Mývatn', note:'唔洗煮·未有酒店實圖'}, items:[
     {time:'10:30–11:15', act:'Dettifoss（11月高風險，多數放棄）', img:'images/dettifoss.jpg?v=4', tag:'walk'},
     {time:'11:30–12:15', act:'Hverir', tag:'walk', must:true, img:'images/hverir-namafjall.jpg?v=3'},
     {time:'12:30–13:15', act:'Dimmuborgir', img:'images/dimmuborgir.jpg?v=4', tag:'walk'},
     {time:'14:00–16:00', act:'米湖溫泉', img:'images/myvatn-baths.jpg?v=4', tag:'act', must:true},
-    {time:'16:30–18:00', act:'Vogafjós', tag:'eat'},
+    {time:'16:30–18:00', act:'Vogafjós', tag:'eat', nav:'Vogafjós Farm Resort Iceland'},
     {time:'18:30', act:'入住 Berjaya Mývatn', tag:'act'}
   ]},
   {date:'11/15', color:'#F2A497', title:'Goðafoss → Laugarbakki（建議 07:30 起身）', stay:{name:'Hótel Laugarbakki', note:'唔洗煮·食酒店·未有酒店實圖'}, items:[
@@ -174,7 +174,7 @@ function renderTimeline(idx){
     if(item.must)html+='<span class="must">必去</span>';
     if(item.toll)html+='<span class="toll">收費注意</span>';
     if(item.note)html+=`<span class="note">${item.note}</span>`;
-    const query = encodeURIComponent(item.act + ' Iceland');
+    const query = encodeURIComponent(item.nav || (item.act + ' Iceland'));
     html += ` <a class="nav-btn" href="https://www.google.com/maps/search/?api=1&query=${query}" target="_blank">🗺️ 導航</a>`;
     if(item.img)html+=`<br><img class="spot-img" src="${item.img}" alt="${item.act}"><div class="cap">${item.act}</div>`;
     if(item.img2)html+=`<br><img class="spot-img" src="${item.img2}" alt=""><div class="cap">Diamond Beach</div>`;
