@@ -122,12 +122,15 @@ const days = [
     {time:'12:00–13:30', act:'Lunch 阿克雷里 + 補給', tag:'eat'},
     {time:'16:30', act:'入住 Hótel Laugarbakki', tag:'act'}
   ]},
-  {date:'11/16', color:'#F2A497', title:'斯奈山 Day 1（建議 08:30 出發）', stay:{name:'Kirkjufell central apartment', note:'可煮·兩晚，住到 11/17·未有公寓實圖'}, items:[
-    {time:'08:30', act:'由 Laugarbakki 出發', tag:'drive', note:'約 2.5 小時'},
-    {time:'11:30', act:'入住 Kirkjufell apartment', tag:'act'},
-    {time:'12:00–12:40', act:'Grundarfjörður 短行（可選）', tag:'walk'},
-    {time:'13:30–15:30', act:'Kirkjufell + Kirkjufellsfoss', tag:'walk', must:true, img:'images/kirkjufell.jpg'},
-    {time:'18:30', act:'Bjargarsteinn', tag:'eat'}
+  {date:'11/16', color:'#F2A497', title:'斯奈山 Day 1（建議 09:00 出發）', stay:{name:'Kirkjufell central apartment', note:'可煮·兩晚，住到 11/17·未有公寓實圖'}, items:[
+    {time:'09:00', act:'由 Laugarbakki 出發', tag:'drive', note:'約 1小時 15 分到 Borgarnes'},
+    {time:'10:20–11:00', act:'Borgarnes Bónus 補給', tag:'drive', note:'買兩日煮嘢 + 午餐材料'},
+    {time:'11:00', act:'繼續出發去 Kirkjufell', tag:'drive', note:'約 1–1.5 小時'},
+    {time:'12:15–12:45', act:'到達 Grundarfjörður', tag:'drive'},
+    {time:'12:45–13:45', act:'午餐（Grundarfjörður）', tag:'eat', note:'Harbour Café / Kaffi 59 或車內即食'},
+    {time:'14:00–15:30', act:'Kirkjufell + Kirkjufellsfoss', tag:'walk', must:true, img:'images/kirkjufell.jpg'},
+    {time:'15:45–16:45', act:'附近行下／休息', tag:'walk'},
+    {time:'17:00–18:00', act:'Check-in 公寓', tag:'act'}
   ]},
   {date:'11/17', color:'#F2A497', title:'斯奈山西／南岸（建議 09:00 出發）', stay:{name:'Kirkjufell central apartment', note:'第二晚·可煮·未有公寓實圖'}, items:[
     {time:'09:00', act:'由酒店出發', tag:'drive'},
@@ -170,14 +173,14 @@ function renderTimeline(idx){
     div.className='item';
     const tagClass=item.tag==='drive'?'tag-drive':item.tag==='walk'?'tag-walk':item.tag==='eat'?'tag-eat':'tag-act';
     const tagText=item.tag==='drive'?'自駕':item.tag==='walk'?'步行':item.tag==='eat'?'用餐':'活動';
-    let html=`<strong>${item.time}</strong> ${item.act} <span class="tag ${tagClass}">${tagText}</span>`;
-    if(item.must)html+='<span class="must">必去</span>';
-    if(item.toll)html+='<span class="toll">收費注意</span>';
-    if(item.note)html+=`<span class="note">${item.note}</span>`;
+    let html=`<strong>${item.time}</strong> ${item.act} <span class=\"tag ${tagClass}\">${tagText}</span>`;
+    if(item.must)html+='<span class=\"must\">必去</span>';
+    if(item.toll)html+='<span class=\"toll\">收費注意</span>';
+    if(item.note)html+=`<span class=\"note\">${item.note}</span>`;
     const query = encodeURIComponent(item.nav || (item.act + ' Iceland'));
-    html += ` <a class="nav-btn" href="https://www.google.com/maps/search/?api=1&query=${query}" target="_blank">🗺️ 導航</a>`;
-    if(item.img)html+=`<br><img class="spot-img" src="${item.img}" alt="${item.act}"><div class="cap">${item.act}</div>`;
-    if(item.img2)html+=`<br><img class="spot-img" src="${item.img2}" alt=""><div class="cap">Diamond Beach</div>`;
+    html += ` <a class=\"nav-btn\" href=\"https://www.google.com/maps/search/?api=1&query=${query}\" target=\"_blank\">🗺️ 導航</a>`;
+    if(item.img)html+=`<br><img class=\"spot-img\" src=\"${item.img}\" alt=\"${item.act}\"><div class=\"cap\">${item.act}</div>`;
+    if(item.img2)html+=`<br><img class=\"spot-img\" src=\"${item.img2}\" alt=\"\"><div class=\"cap\">Diamond Beach</div>`;
     div.innerHTML=html;
     timeline.appendChild(div);
   });
@@ -185,7 +188,7 @@ function renderTimeline(idx){
     const box=document.createElement('div');
     box.className='stay-box';
     const stayQuery = encodeURIComponent(d.stay.name);
-    box.innerHTML=`<strong>今晚住宿</strong><h3>${d.stay.name}</h3><p>${d.stay.note}</p> <a class="nav-btn" href="https://www.google.com/maps/search/?api=1&query=${stayQuery}" target="_blank">🗺️ 導航</a>`+(d.stay.img?`<img class="stay-img" src="${d.stay.img}" alt="">`:'');
+    box.innerHTML=`<strong>今晚住宿</strong><h3>${d.stay.name}</h3><p>${d.stay.note}</p> <a class=\"nav-btn\" href=\"https://www.google.com/maps/search/?api=1&query=${stayQuery}\" target=\"_blank\">🗺️ 導航</a>`+(d.stay.img?`<img class=\"stay-img\" src=\"${d.stay.img}\" alt=\"\">`:'');
     timeline.appendChild(box);
   }
 }
